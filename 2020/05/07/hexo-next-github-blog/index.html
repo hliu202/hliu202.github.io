@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"hliu202.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"hliu202.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="从 0 开始搭建 Hexo + Next主题 + Github Pages 博客，主要分为 2 部分  基本配置：基本功能，包括 Hexo 安装，主题安装，配置 yaml，支持 tags 和 categories 扩展功能：包括评论，阅读人数，TODO">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="从 0 开始搭建 Hexo + Next主题 + Github Pages 博客，主要分为 2 部分  基本配置：基本功能，包括 Hexo 安装，主题安装，配置 yaml，支持 tags 和 categories 扩展功能：包括评论，阅读人数，TODO">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-07T11:03:20.000Z">
-<meta property="article:modified_time" content="2020-05-07T13:27:19.199Z">
+<meta property="article:modified_time" content="2020-05-07T13:31:05.292Z">
 <meta property="article:author" content="Hao Liu">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -111,7 +111,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -141,38 +140,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
 
 </div>
     </header>
@@ -292,7 +264,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><p>修改 <code>themes/next/_config.yml</code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span>   <span class="comment"># 默认只有 home 和 archives：</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">social:</span> <span class="comment"># 添加 github 链接</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/yourname</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/avatar.jpg</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/avatar.jpg</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.jpg</span>   <span class="comment"># 将图片放到 blog/source/images/</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">local_search:</span>  <span class="comment"># 内容搜索</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span>   <span class="comment"># 默认只有 home 和 archives：</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">social:</span> <span class="comment"># 添加 github 链接</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/yourname</span> <span class="string">||</span> <span class="string">fab</span> <span class="string">fa-github</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/avatar.jpg</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/avatar.jpg</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/avatar.jpg</span>   <span class="comment"># 将图片放到 blog/source/images/</span></span><br></pre></td></tr></table></figure>
 
 <p>这样2 个问题</p>
 <ol>
@@ -308,10 +280,6 @@
 <p>修改 <code>blog/source/categories/index.md</code>，加上一行</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">type:</span> <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="搜索-Search"><a href="#搜索-Search" class="headerlink" title="搜索(Search)"></a>搜索(Search)</h3><p>安装插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
-
-<p>但是有 bug 没有解决（deploy 后页面老是显示 Searching…)，所以先把 local search 关闭了</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如何修改 <code>Posted on</code> 的发表时间 -&gt; 可以修改 md 中的 <code>date</code></p>
 <p>不显示 <code>Edited on</code> 修改时间</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">updated_at:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
@@ -322,6 +290,7 @@
 <p>需要去 <a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">LeanCloud</a> 注册，创建应用，之后，获取 appid 和 appkey，<a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">see more</a></p>
 <h2 id="阅读数-Views"><a href="#阅读数-Views" class="headerlink" title="阅读数(Views)"></a>阅读数(Views)</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="搜索-Search"><a href="#搜索-Search" class="headerlink" title="搜索(Search)"></a>搜索(Search)</h3><p>有 bug 没有解决（deploy 后页面老是显示 Searching…)，所以先把 search 关闭了</p>
 <h1 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h1><p><a href="https://yashuning.github.io/tags/hexo/" target="_blank" rel="noopener">Yaya’s blog</a></p>
 <p><a href="https://qiuyiwu.github.io/2019/01/25/Hexo-LocalSearch/" target="_blank" rel="noopener">Create Local Search for Your Hexo Blog</a></p>
 
@@ -405,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本配置"><span class="nav-number">1.</span> <span class="nav-text">基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-安装"><span class="nav-number">1.1.</span> <span class="nav-text">Hexo 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-deploy"><span class="nav-number">1.1.2.</span> <span class="nav-text">Github deploy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-主题"><span class="nav-number">1.2.</span> <span class="nav-text">Next 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tags-amp-categories"><span class="nav-number">1.2.2.</span> <span class="nav-text">tags &amp; categories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索-Search"><span class="nav-number">1.2.3.</span> <span class="nav-text">搜索(Search)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.2.4.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展配置"><span class="nav-number">2.</span> <span class="nav-text">扩展配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#评论功能-Valine"><span class="nav-number">2.1.</span> <span class="nav-text">评论功能(Valine)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读数-Views"><span class="nav-number">2.2.</span> <span class="nav-text">阅读数(Views)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ref"><span class="nav-number">3.</span> <span class="nav-text">Ref</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本配置"><span class="nav-number">1.</span> <span class="nav-text">基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-安装"><span class="nav-number">1.1.</span> <span class="nav-text">Hexo 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.1.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-deploy"><span class="nav-number">1.1.2.</span> <span class="nav-text">Github deploy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Next-主题"><span class="nav-number">1.2.</span> <span class="nav-text">Next 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tags-amp-categories"><span class="nav-number">1.2.2.</span> <span class="nav-text">tags &amp; categories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.2.3.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展配置"><span class="nav-number">2.</span> <span class="nav-text">扩展配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#评论功能-Valine"><span class="nav-number">2.1.</span> <span class="nav-text">评论功能(Valine)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读数-Views"><span class="nav-number">2.2.</span> <span class="nav-text">阅读数(Views)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索-Search"><span class="nav-number">2.2.1.</span> <span class="nav-text">搜索(Search)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ref"><span class="nav-number">3.</span> <span class="nav-text">Ref</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -529,10 +498,6 @@
   
 
 
-
-
-  
-<script src="/js/local-search.js"></script>
 
 
 
