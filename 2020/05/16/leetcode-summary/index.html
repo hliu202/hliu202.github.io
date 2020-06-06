@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"hliu202.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="最近开始做 LeetCode，总结下遇到的问题和套路。">
+  <meta name="description" content="最近开始做 LeetCode，也参加了 2 次周赛，总结下遇到的问题和套路。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 小结">
 <meta property="og:url" content="https://hliu202.github.io/2020/05/16/leetcode-summary/index.html">
 <meta property="og:site_name" content="刘浩的blog">
-<meta property="og:description" content="最近开始做 LeetCode，总结下遇到的问题和套路。">
+<meta property="og:description" content="最近开始做 LeetCode，也参加了 2 次周赛，总结下遇到的问题和套路。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-16T04:45:32.000Z">
-<meta property="article:modified_time" content="2020-05-24T00:50:34.018Z">
+<meta property="article:modified_time" content="2020-05-24T04:24:44.167Z">
 <meta property="article:author" content="Hao Liu">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -257,12 +257,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>最近开始做 <a href="https://leetcode-cn.com/" target="_blank" rel="noopener">LeetCode</a>，总结下遇到的问题和套路。</p>
+        <p>最近开始做 <a href="https://leetcode-cn.com/" target="_blank" rel="noopener">LeetCode</a>，也参加了 2 次周赛，总结下遇到的问题和套路。</p>
 <a id="more"></a>
 
-<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>编程语言用的 <code>Python3</code>，非常简洁高效，极大地提升编程积极性。毕竟性能不关键，算法题重在思路，不能被 C/C++和 Java 那冗长的语法分心。</p>
-<p>另外用了 <code>VSCode</code>写代码和调试，方便灵活，写好后 copy 到官网页面上提交。</p>
-<h1 id="套路"><a href="#套路" class="headerlink" title="套路"></a>套路</h1><p>基本上是要多做，慢慢开始熟练了，跟解数学一样。</p>
+<h1 id="套路"><a href="#套路" class="headerlink" title="套路"></a>套路</h1><p>编程语言用的 <code>Python3</code>，非常简洁高效，提升积极性。毕竟算法题重在思路，不能被 C/C++和 Java 那冗长的语法分心。</p>
+<p>另外用了 <code>VSCode</code>写代码和调试，方便灵活，写好后再 copy 到官网页面上提交。</p>
+<p>后面就是要多做题了，总结经验，慢慢开始熟练了，跟解数学题一样。</p>
 <h2 id="想好再写"><a href="#想好再写" class="headerlink" title="想好再写"></a>想好再写</h2><p>不要看到题就开始写，除非是做过的或者很简单的题目，否则大概率要卡住，边想边写，写一半又要想，最后还是要完全想通了思路，才能做出来。所以要：</p>
 <blockquote>
 <p><strong>理清思路，想好再写</strong>。复杂问题的要打草稿，但也不要没有思路的乱画</p>
@@ -276,9 +276,9 @@
 <h2 id="相似解法"><a href="#相似解法" class="headerlink" title="相似解法"></a>相似解法</h2><p>虽然还没做多少题，已经发现某些题有相似性的<strong>解法的思路</strong>：比如差值法，动态规划，暴力破解（brute force 不可取）等，总结并归纳主题方便后续。</p>
 <p>比如：</p>
 <ol>
-<li><a href="https://leetcode-cn.com/problems/constrained-subsequence-sum/" target="_blank" rel="noopener">1425. 带限制的子序列和</a> 要用到 <a href="https://leetcode-cn.com/problems/sliding-window-maximum/" target="_blank" rel="noopener">239. 滑动窗口最大值</a>。先做的 1425，看答案也看不懂，就去看的 239 了解什么是<code>滑动窗口</code>，搞懂后再回头来搞 1425。</li>
-<li><a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/" target="_blank" rel="noopener">560. 和为 K 的子数组</a> 中的方法，即 <code>sum(i,j) = sum(0,j) - sum(0,i)</code>，可以用到 <a href="https://leetcode-cn.com/contest/weekly-contest-188/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/" target="_blank" rel="noopener">1442. 形成两个疑惑相等数组</a>中。第一个题开始是 O(n^2^)的解法，提交结果为<code>超出时间限制</code>，看了评论找到解法。后一个题一看和之前遇到的类似，终于靠自己想出了解法</li>
-<li>动态规划（dynamic program)：太多了，基本就是求什么最大xx，最小yy等。重点是 2 个：<ul>
+<li><strong>滑动窗口</strong>：<a href="https://leetcode-cn.com/problems/constrained-subsequence-sum/" target="_blank" rel="noopener">1425. 带限制的子序列和</a> 要用到 <a href="https://leetcode-cn.com/problems/sliding-window-maximum/" target="_blank" rel="noopener">239. 滑动窗口最大值</a>。先做的 1425，看答案也看不懂，就去看的 239 了解什么是<code>滑动窗口</code>，搞懂后再回头来搞 1425。</li>
+<li><strong>前缀表达式</strong>：<a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/" target="_blank" rel="noopener">560. 和为 K 的子数组</a> 中的方法，即 <code>sum(i,j) = sum(0,j) - sum(0,i)</code>，可以用到 <a href="https://leetcode-cn.com/contest/weekly-contest-188/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/" target="_blank" rel="noopener">1442. 形成两个疑惑相等数组</a>中。第一个题开始是 O(n^2^)的解法，提交结果为<code>超出时间限制</code>，看了评论找到解法。后一个题一看和之前遇到的类似，终于靠自己想出了解法</li>
+<li><strong>动态规划</strong>（dynamic program)：太多了，基本就是求什么最大xx，最小yy等。重点是 2 个：<ul>
 <li>明确创建怎样的 <strong>dp 数组</strong>，初始化数组。比如<a href="https://leetcode-cn.com/problems/minimum-cost-for-tickets/" target="_blank" rel="noopener">983. 最低票价</a>，知道要用 dp 思路，但不<strong>按照天</strong>来建立数组，就怎么都想不出解决办法。</li>
 <li>明确动态<strong>转移方程</strong>，即 <code>f(i+1) &lt;- f(i)</code> 等。比如<a href="https://leetcode-cn.com/problems/maximal-square/" target="_blank" rel="noopener">221. 最大正方形</a>，一开始是 <code>dp[i][j] = dp[i-1][j-1]+1 if m[i-1][j] == m[i][j-1] == 1</code>，后来测试出错，发现是要 <code>min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1])</code></li>
 </ul>
@@ -299,13 +299,233 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>对于 Python 没有自带的数据结构，自己实现和help functions，方便在本地调试。比如 TreeNode，ListNode 等，还有create, print方法等，待<a href="https://github.com/hliu202/leetcode-py/tree/master/util" target="_blank" rel="noopener">扩充</a>: </p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>对于 Python 没有自带的数据结构，自己实现和help functions，方便在本地调试。比如 TreeNode，ListNode 等，还有相应的create, print方法等，待<a href="https://github.com/hliu202/leetcode-py/tree/master/util" target="_blank" rel="noopener">扩充</a>。</p>
+<h1 id="Weekly-Contest-周赛"><a href="#Weekly-Contest-周赛" class="headerlink" title="Weekly Contest 周赛"></a>Weekly Contest 周赛</h1><p>周赛是真正的考验，因为平时的练习题可以看答案，而这个没有答案，且有 1 个半小时限制，又要做出来，还要做的快。一共有 4 道题，简单 x1，中等 x2，困难 x1。</p>
+<p>目前参加了 2 场（第二次的题更简单，所以完成时间更短），幸运的是都做出了前 3 道题，最后一道题实在想不出答案，只能找大佬的答案看看。国内和全球竟然是同步的，分别有三千多和一万多人参加，排名如下：</p>
+<p><a href="https://leetcode-cn.com/contest/weekly-contest-189" target="_blank" rel="noopener">May-17 189</a></p>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>用户名</th>
+<th>得分</th>
+<th>完成时间</th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/number-of-students-doing-homework-at-a-given-time/" target="_blank" rel="noopener">题目1 (3)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/rearrange-words-in-a-sentence/" target="_blank" rel="noopener">题目2 (4)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/" target="_blank" rel="noopener">题目3 (5)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/" target="_blank" rel="noopener">题目4 (7)</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>898 / 3691</td>
+<td>liu-hao-b</td>
+<td>12</td>
+<td>1:04:47</td>
+<td>0:08:52 1</td>
+<td>0:28:16</td>
+<td>0:59:47</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://leetcode-cn.com/u/tian-tang-6/" target="_blank" rel="noopener">tian-tang-6</a></td>
+<td>19</td>
+<td>0:27:31</td>
+<td>0:01:50</td>
+<td>0:05:49</td>
+<td>0:12:10</td>
+<td>0:27:31</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://leetcode-cn.com/u/zerotrac2/" target="_blank" rel="noopener">zerotrac2</a></td>
+<td>19</td>
+<td>0:30:45</td>
+<td>0:01:44</td>
+<td>0:04:27</td>
+<td>0:14:01</td>
+<td>0:30:45</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://leetcode-cn.com/u/qingchuanzhang-microsoft/" target="_blank" rel="noopener">QingchuanZhang-Microsoft</a></td>
+<td>19</td>
+<td>0:31:33</td>
+<td>0:02:24</td>
+<td>0:05:54</td>
+<td>0:13:44</td>
+<td>0:31:33</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>用户名</th>
+<th>得分</th>
+<th>完成时间</th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/number-of-students-doing-homework-at-a-given-time/" target="_blank" rel="noopener">题目1 (3)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/rearrange-words-in-a-sentence/" target="_blank" rel="noopener">题目2 (4)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/" target="_blank" rel="noopener">题目3 (5)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-189/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/" target="_blank" rel="noopener">题目4 (7)</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3670 / 13038</td>
+<td>liu-hao-b</td>
+<td>12</td>
+<td>1:04:47</td>
+<td>0:08:52 1</td>
+<td>0:28:16</td>
+<td>0:59:47</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://leetcode.com/kotamanegi/" target="_blank" rel="noopener">kotamanegi</a></td>
+<td>19</td>
+<td>0:17:30</td>
+<td>0:05:48</td>
+<td>0:04:32</td>
+<td>0:09:50</td>
+<td>0:17:30</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://leetcode.com/uwi/" target="_blank" rel="noopener">uwi</a></td>
+<td>19</td>
+<td>0:18:45</td>
+<td>0:18:45</td>
+<td>0:17:54</td>
+<td>0:03:28</td>
+<td>0:13:17</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://leetcode.com/x____x/" target="_blank" rel="noopener">x____x</a></td>
+<td>19</td>
+<td>0:20:08</td>
+<td>0:01:33</td>
+<td>0:07:22</td>
+<td>0:13:58</td>
+<td>0:20:08</td>
+</tr>
+</tbody></table>
+<p><a href="https://leetcode-cn.com/contest/weekly-contest-190" target="_blank" rel="noopener">May-24 190</a></p>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>用户名</th>
+<th>得分</th>
+<th>完成时间</th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/" target="_blank" rel="noopener">题目1 (3)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/maximum-number-of-vowels-in-a-substring-of-given-length/" target="_blank" rel="noopener">题目2 (4)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/pseudo-palindromic-paths-in-a-binary-tree/" target="_blank" rel="noopener">题目3 (5)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/max-dot-product-of-two-subsequences/" target="_blank" rel="noopener">题目4 (6)</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>649 / 3350</td>
+<td>liu-hao-b</td>
+<td>12</td>
+<td>0:32:29</td>
+<td>0:05:11</td>
+<td>0:14:23 1</td>
+<td>0:27:29</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://leetcode-cn.com/u/liouzhou_101/" target="_blank" rel="noopener">liouzhou_101</a></td>
+<td>18</td>
+<td>0:11:50</td>
+<td>0:02:34</td>
+<td>0:04:56</td>
+<td>0:08:47</td>
+<td>0:11:50</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://leetcode-cn.com/u/heltion/" target="_blank" rel="noopener">Heltion</a></td>
+<td>18</td>
+<td>0:14:32</td>
+<td>0:03:59</td>
+<td>0:06:39</td>
+<td>0:09:36</td>
+<td>0:14:32</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://leetcode-cn.com/u/qingchuanzhang-microsoft/" target="_blank" rel="noopener">QingchuanZhang-Microsoft</a></td>
+<td>18</td>
+<td>0:14:34</td>
+<td>0:01:52</td>
+<td>0:03:58</td>
+<td>0:08:59</td>
+<td>0:14:34</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>用户名</th>
+<th>得分</th>
+<th>完成时间</th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/" target="_blank" rel="noopener">题目1 (3)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/maximum-number-of-vowels-in-a-substring-of-given-length/" target="_blank" rel="noopener">题目2 (4)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/pseudo-palindromic-paths-in-a-binary-tree/" target="_blank" rel="noopener">题目3 (5)</a></th>
+<th><a href="https://leetcode-cn.com/contest/weekly-contest-190/problems/max-dot-product-of-two-subsequences/" target="_blank" rel="noopener">题目4 (6)</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3020 / 11873</td>
+<td>liu-hao-b</td>
+<td>12</td>
+<td>0:32:29</td>
+<td>0:05:11</td>
+<td>0:14:23 1</td>
+<td>0:27:29</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://leetcode.com/huzecong/" target="_blank" rel="noopener">huzecong</a></td>
+<td>18</td>
+<td>0:08:02</td>
+<td>0:01:08</td>
+<td>0:02:24</td>
+<td>0:04:41</td>
+<td>0:08:02</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://leetcode.com/zcgzcgzcg/" target="_blank" rel="noopener">zcgzcgzcg</a></td>
+<td>18</td>
+<td>0:09:06</td>
+<td>0:01:20</td>
+<td>0:03:01</td>
+<td>0:06:24</td>
+<td>0:09:06</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://leetcode.com/superluminal/" target="_blank" rel="noopener">superluminal</a></td>
+<td>18</td>
+<td>0:09:54</td>
+<td>0:01:06</td>
+<td>0:02:14</td>
+<td>0:04:39</td>
+<td>0:09:54</td>
+</tr>
+</tbody></table>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以前有在英文 LeetCode 网站上也做过十几道题，没有坚持，也没总结经验。</p>
 <p>现在重现开始做做题，起因是 B 站上看到有大神发周赛的视频，看了之后觉得</p>
 <blockquote>
 <p>卧槽，你为什么这么熟练？</p>
 </blockquote>
-<p>觉得身为程序员，也要做基本的练习，避免退步。今年目标是 365 题，<a href="https://leetcode-cn.com/u/liu-hao-b/" target="_blank" rel="noopener">我的主页</a>，目前完成 16 题（2020-May-16），16/365 = 4% 进度条还长…</p>
+<p>觉得身为程序员，也要做基本的练习，避免退步。今年目标是 365 题，<a href="https://leetcode-cn.com/u/liu-hao-b/" target="_blank" rel="noopener">我的主页</a>，进度条还在初级阶段…</p>
 
     </div>
 
@@ -392,7 +612,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-text">准备</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#套路"><span class="nav-text">套路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#想好再写"><span class="nav-text">想好再写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相似解法"><span class="nav-text">相似解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要低估问题"><span class="nav-text">不要低估问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#套路"><span class="nav-text">套路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#想好再写"><span class="nav-text">想好再写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相似解法"><span class="nav-text">相似解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要低估问题"><span class="nav-text">不要低估问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Weekly-Contest-周赛"><span class="nav-text">Weekly Contest 周赛</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -408,20 +628,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
