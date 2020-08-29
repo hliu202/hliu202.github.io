@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"hliu202.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="什么是《自控力》：人们拥有的“我想要”，“我不要”，以及“我要”这三种力量的协同努力。 自控力的重点在于处理好“明天”和“今天”，如何才能抵制当前的诱惑，追求长远的目标？ “明天”无法准确预知：如果你先获得“今天”的奖励，让你放弃转而追求无法预知的“明天”的丰厚奖励，人们也很难办到。所以需要优先考虑未来，延迟考虑当前：把未来的奖励和当前的奖励放到同一个天平上，不要对未来的奖励打折。 其他：人们大部">
+  <meta name="description" content="这次遇到leetcode每日一题「459.重复的子字符串」，虽然难度是「简单」，我愿称其为最难的简单题目。题目描述如下：  给定一个非空的字符串，判断它是否可以由它的一个子串重复多次构成。 示例 1： 输入: “abab” 输出: True 解释: 可由子字符串 “ab” 重复两次构成。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《自控力》读书笔记">
-<meta property="og:url" content="https://hliu202.github.io/2020/05/04/2020-5-4-the-willpower-instinct/index.html">
+<meta property="og:title" content="Easy 中的最难：459.重复的子字符串">
+<meta property="og:url" content="https://hliu202.github.io/2020/08/29/Easy%20%E9%A2%98%E7%9B%AE%20459%20%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="刘浩的blog">
-<meta property="og:description" content="什么是《自控力》：人们拥有的“我想要”，“我不要”，以及“我要”这三种力量的协同努力。 自控力的重点在于处理好“明天”和“今天”，如何才能抵制当前的诱惑，追求长远的目标？ “明天”无法准确预知：如果你先获得“今天”的奖励，让你放弃转而追求无法预知的“明天”的丰厚奖励，人们也很难办到。所以需要优先考虑未来，延迟考虑当前：把未来的奖励和当前的奖励放到同一个天平上，不要对未来的奖励打折。 其他：人们大部">
+<meta property="og:description" content="这次遇到leetcode每日一题「459.重复的子字符串」，虽然难度是「简单」，我愿称其为最难的简单题目。题目描述如下：  给定一个非空的字符串，判断它是否可以由它的一个子串重复多次构成。 示例 1： 输入: “abab” 输出: True 解释: 可由子字符串 “ab” 重复两次构成。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-04T07:34:08.000Z">
-<meta property="article:modified_time" content="2020-05-24T02:27:14.320Z">
+<meta property="article:published_time" content="2020-08-29T05:57:37.000Z">
+<meta property="article:modified_time" content="2020-08-29T06:28:00.080Z">
 <meta property="article:author" content="Hao Liu">
-<meta property="article:tag" content="科普">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://hliu202.github.io/2020/05/04/2020-5-4-the-willpower-instinct/">
+<link rel="canonical" href="https://hliu202.github.io/2020/08/29/Easy%20%E9%A2%98%E7%9B%AE%20459%20%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
 
   
 
-  <title>《自控力》读书笔记 | 刘浩的blog</title>
+  <title>Easy 中的最难：459.重复的子字符串 | 刘浩的blog</title>
   
 
 
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://hliu202.github.io/2020/05/04/2020-5-4-the-willpower-instinct/">
+    <link itemprop="mainEntityOfPage" href="https://hliu202.github.io/2020/08/29/Easy%20%E9%A2%98%E7%9B%AE%20459%20%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -203,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          《自控力》读书笔记
+          Easy 中的最难：459.重复的子字符串
         </h1>
 
         <div class="post-meta">
@@ -213,7 +213,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-05-04 15:34:08" itemprop="dateCreated datePublished" datetime="2020-05-04T15:34:08+08:00">2020-05-04</time>
+              <time title="Created: 2020-08-29 13:57:37" itemprop="dateCreated datePublished" datetime="2020-08-29T13:57:37+08:00">2020-08-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,7 +221,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                  <a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a>
                 </span>
             </span>
 
@@ -241,8 +241,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2020/05/04/2020-5-4-the-willpower-instinct/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/05/04/2020-5-4-the-willpower-instinct/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/08/29/Easy%20%E9%A2%98%E7%9B%AE%20459%20%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/29/Easy%20%E9%A2%98%E7%9B%AE%20459%20%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -257,70 +257,61 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>什么是<a href="https://book.douban.com/subject/10786473/" target="_blank" rel="noopener">《自控力》</a>：人们拥有的“我想要”，“我不要”，以及“我要”这三种力量的协同努力。</p>
-<p>自控力的重点在于处理好“明天”和“今天”，如何才能抵制当前的诱惑，追求长远的目标？</p>
-<p>“明天”无法准确预知：如果你先获得“今天”的奖励，让你放弃转而追求无法预知的“明天”的丰厚奖励，人们也很难办到。所以需要优先考虑未来，延迟考虑当前：把未来的奖励和当前的奖励放到同一个天平上，<strong>不要对未来的奖励打折</strong>。</p>
-<p>其他：人们大部分时间的决定都是无目标的，大脑也没有意识到这一点(需要“自我意识”)。</p>
+        <p>这次遇到leetcode每日一题「<a href="https://leetcode-cn.com/problems/repeated-substring-pattern/" target="_blank" rel="noopener">459.重复的子字符串</a>」，虽然难度是「简单」，我愿称其为最难的简单题目。题目描述如下：</p>
+<blockquote>
+<p>给定一个非空的字符串，判断它是否可以由它的一个子串重复多次构成。</p>
+<p>示例 1：</p>
+<p>输入: “abab”</p>
+<p>输出: True</p>
+<p>解释: 可由子字符串 “ab” 重复两次构成。</p>
+</blockquote>
 <a id="more"></a>
-
-<h1 id="本能"><a href="#本能" class="headerlink" title="本能"></a>本能</h1><p>意志力是种生理本能，它和压力一样，通过不断进化来保护我们不受自身伤害。</p>
-<ul>
-<li>呼吸出你的自控力：把你的呼吸降到每分钟4～6次，将身体调整到适合自控的生理状态。</li>
-<li>5分钟给意志力加油：出门活动，哪怕只是在周围转转，也能减少压力、改善心情、提供动力。</li>
-<li>睡眠：打盹或补觉可以消除睡眠不足的影响。</li>
-<li>放松能让你恢复意志力储备：躺下，深呼吸，让“放松的生理反应”帮你从自控和压力造成的疲惫中恢复过来。</li>
-</ul>
-<h1 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h1><p>自控力就像肌肉一样有极限。自控力用得太多会疲惫，但坚持训练能增强自控力。</p>
-<p>注意什么时候你的意志力最强，什么时候你最容易放弃。你的疲惫感是真的吗？</p>
-<ul>
-<li>饮食：确保你的身体摄入了足够的食物，能为你提供足够多的能量。</li>
-<li>锻炼：选择一件事来做（“我想要”的力量）或不做（“我不想”的力量），或者记录一件你不曾关注的事情，以此锻炼你的“自控力肌肉”。</li>
-<li>发现自己最重要的“我想要”的力量：也就是你脆弱的时候给你动力的东西。每当你面对诱惑、想要放弃的时候，都想一想这个东西。</li>
-</ul>
-<h1 id="容忍罪恶：为何善行之后会有恶行"><a href="#容忍罪恶：为何善行之后会有恶行" class="headerlink" title="容忍罪恶：为何善行之后会有恶行"></a>容忍罪恶：为何善行之后会有恶行</h1><p>当我们将意志力挑战看成衡量道德水平的标准时，善行就会允许我们做坏事。为了能更好地自控，我们需要忘掉美德，关注目标和价值观。</p>
-<p>你是否在向明天赊账？你是不是告诉自己明天会弥补今天的过错？如果是这样的话，你是否真的弥补上了？光环效应：你是不是只看到了坏东西好的一面，如折扣省钱、零脂肪、保护环境？当你想到你的意志力挑战时，你觉得哪部分的你才是“真实”的你？是想追求目标的你，还是需要被控制的你？</p>
-<ul>
-<li>明天和今天毫无区别：当你想改变行为的时候，试着<strong>减少行为的变化性</strong>，而不是减少某种行为</li>
-<li>取消许可，牢记理由：下一回，当你发现自己在用曾经的善行为放纵辩护的时候，停下来想一想你做“好”事的原因，而不是你应不应该得到奖励</li>
-</ul>
-<h1 id="多巴胺：为什么我们误把渴望当幸福"><a href="#多巴胺：为什么我们误把渴望当幸福" class="headerlink" title="多巴胺：为什么我们误把渴望当幸福"></a>多巴胺：为什么我们误把渴望当幸福</h1><p>我们的大脑错把<strong>奖励的承诺</strong>（多巴胺）当做快乐的保证，所以，我们会从不可能带来满足的事物中寻找满足感。</p>
-<p>是什么让你的多巴胺神经元不停燃烧？是什么给了你奖励的承诺，迫使你去寻找满足感？观察一下零售商和营销人员如何刺激奖励的承诺？注意观察，欲望是如何引发压力和焦虑的。</p>
-<ul>
-<li>为了你的“我要做”挑战释放多巴胺：如果你总是拖延着不做某些事，试着把它和那些能让你的多巴胺神经元燃烧的事联系在一起，促使你自己去做那些事</li>
-<li>测试奖励的承诺：做那些大脑告诉你你会快乐、但似乎无法让你满足的事，比如吃零食、购物、电视以及与网络相关的、浪费时间的事，注意观察自己放纵时的感受。现实和大脑的承诺相符吗？</li>
-</ul>
-<h1 id="那又如何：情绪低落使人屈服于诱惑"><a href="#那又如何：情绪低落使人屈服于诱惑" class="headerlink" title="那又如何：情绪低落使人屈服于诱惑"></a>那又如何：情绪低落使人屈服于诱惑</h1><p>情绪低落会使人屈服于诱惑，摆脱罪恶感会让你变得更强大。</p>
-<p>当你面临压力、感到焦虑或情绪低落时，你会怎么解决？注意那些从媒体、网络或其他渠道听到或看到的压力因素。当意志力失效的时候，你会产生罪恶感并责备自己吗？你会用幻想未来的自己来改善现在的心情，而不是采取实际行动来改善自己的行为吗？</p>
-<ul>
-<li>有效的解压方法：下一回，当你面临巨大的压力时，尝试一种有效的解压方法，例如锻炼身体或参加体育活动、祈祷或参加宗教活动、阅读、听音乐、花时间和家人朋友在一起、按摩、外出散步、冥想或做瑜伽，以及培养其他有创造性的爱好。</li>
-<li>失败的时候，请原谅自己：面对自己的挫折，持同情自我的态度，以免罪恶感让你再次放弃抗争</li>
-<li>乐观的悲观主义者更有可能成功：预测你什么时候、会怎样受到诱惑和违背承诺，想象一个不让自己放弃抗争的具体方法</li>
-</ul>
-<h1 id="出售未来：及时享乐的经济学"><a href="#出售未来：及时享乐的经济学" class="headerlink" title="出售未来：及时享乐的经济学"></a>出售未来：及时享乐的经济学</h1><p>我们无法明确地预知未来。</p>
-<p><strong>未来的奖励会打折扣</strong>，你打了几折？你在等待未来的自己吗？</p>
-<ul>
-<li>等待10分钟：在诱惑面前强制安排10分钟的等待时间。在这10分钟里，一定要时刻想着长远的奖励，抵制住诱惑。</li>
-<li>降低你的折扣率：当你受到诱惑，要做和长期利益相悖的事情时，请想一想，这个选择意味着，你为了即时的满足感放弃了更好的长期奖励。</li>
-<li>预先对未来的自己作出承诺：作好拒绝诱惑的准备，让改变偏好变得更难，用奖励或威胁来激励未来的自己。</li>
-<li>预见未来的自己：创造一个未来的记忆，给未来的自己发条信息，想象一下未来的自己。</li>
-</ul>
-<h1 id="为什么意志力会传染"><a href="#为什么意志力会传染" class="headerlink" title="为什么意志力会传染"></a>为什么意志力会传染</h1><p>自控受到社会认同的影响，这使得意志力和诱惑都具有传染性。</p>
-<p>你的社交网络，有没有其他人和你有同样的意志力挑战？你在模仿谁？你最可能从谁身上学到东西？你有没有用社会认同来说服自己，说你的意志力挑战没什么大不了？</p>
-<ul>
-<li>增强你的免疫系统：在每天刚开始的时候，花点时间想一想自己的目标。</li>
-<li>感染自控力：给自己树立一个榜样。问问自己：那个意志力强人会怎么做？</li>
-<li>自豪感的力量：公开你的意志力挑战，想象你在意志力挑战成功后将多么自豪。</li>
-<li>把它变成集体项目</li>
-</ul>
-<h1 id="“我不要”的力量"><a href="#“我不要”的力量" class="headerlink" title="“我不要”的力量"></a>“我不要”的力量</h1><p>试图压抑自己的想法、情绪和欲望，只会产生相反的效果，让你更容易去想，去感受、去做你原本想逃避的事</p>
-<p>你有没有想逃避的想法？压抑这些想法是否有效？试图摆脱某种想法，是否反而让它更强烈？你最想得到的是什么？当你拼命试图把某件东西赶出脑海，是否反而对它产生了更强的渴望？</p>
-<ul>
-<li>忠于你的感受，但别相信你所有的想法：当你产生不快时，专注于呼吸，想象这些想法像浮云一样逐渐淡去</li>
-<li>直面只剩欲望，但不要付诸行动：当欲望来袭，注意到它，但不要马上试图转移注意力或与之争辩。提醒自己“白熊”现象和“反弹”效应。</li>
-<li>驾驭冲动：但冲动一直存在时，与这种感觉共处，像驾驭海浪一样驾驭它，不要试图摆脱它，也不要将冲动付诸行动。</li>
-</ul>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>如果说真的有自控力秘诀，那么从科学的角度来说确实有一个，那就是集中注意力。</p>
-<p>当你作出决定的时候，你需要训练自己的大脑，让它意识到这一点，而不是让它自行其是。</p>
+<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><h2 id="方法-1-枚举"><a href="#方法-1-枚举" class="headerlink" title="方法 1 枚举"></a>方法 1 枚举</h2><p>为啥难呢，首先是做题时，想不到好的方法，只能暴力破解（Brute-Force，枚举）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">repeatedSubstringPattern</span><span class="params">(self, s: str)</span> -&gt; bool:</span></span><br><span class="line">        N = len(s)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(i)</span>:</span></span><br><span class="line">            np = N // i</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, i):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, np):</span><br><span class="line">                    <span class="keyword">if</span> s[j] != s[k*i + j]:</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(N//<span class="number">2</span>, <span class="number">0</span>, <span class="number">-1</span>): <span class="comment"># 检查是否「N//2」长度的重复子串</span></span><br><span class="line">            <span class="keyword">if</span> N % i == <span class="number">0</span> <span class="keyword">and</span> check(i):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p>容易出错且效率不高，总算能通过。然后看答案，震惊竟然有多达 4 种解法，方法1就是枚举，后 3 个答案看不懂。</p>
+<h2 id="方法-2-字符串匹配"><a href="#方法-2-字符串匹配" class="headerlink" title="方法 2 字符串匹配"></a>方法 2 字符串匹配</h2><p>实现只有 1 行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (s + s).find(s, <span class="number">1</span>) != len(s)</span><br></pre></td></tr></table></figure>
+<p>这种方式明显效率比枚举高很多，时间少</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">运行时间</th>
+<th style="text-align:left">内存消耗</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">48 ms</td>
+<td style="text-align:left">13.7 MB</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">320 ms</td>
+<td style="text-align:left">13.8 MB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>但看不懂原理了</p>
+<blockquote>
+<p>证明需要使用一些<strong>同余运算</strong>的小技巧，可以见方法三之后的<strong>「正确性证明」</strong>部分。这里先假设我们已经完成了证明，这样就可以使用非常简短的代码完成本题。在下面的代码中，我们可以从位置 1 开始查询，并希望查询结果不为位置 n，这与移除字符串的第一个和最后一个字符是等价的。</p>
+</blockquote>
+<h2 id="方法-3-KMP-算法"><a href="#方法-3-KMP-算法" class="headerlink" title="方法 3 KMP 算法"></a>方法 3 KMP 算法</h2><p>该方法实际也是 1 行，调用 KMP 算法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">repeatedSubstringPattern</span><span class="params">(self, s: str)</span> -&gt; bool:</span></span><br><span class="line">	...</span><br><span class="line"><span class="keyword">return</span> kmp(s + s, s)</span><br></pre></td></tr></table></figure>
+<p>但 KMP 算法实现又看不懂了，再去找文章理解，比如<a href="https://www.zhihu.com/question/21923021/answer/1032665486" target="_blank" rel="noopener">如何更好地理解和掌握 KMP 算法? - 阮行止的回答 - 知乎</a> </p>
+<h2 id="方法-4-优化的-KMP-算法"><a href="#方法-4-优化的-KMP-算法" class="headerlink" title="方法 4 优化的 KMP 算法"></a>方法 4 优化的 KMP 算法</h2><blockquote>
+<p>如果读者能够看懂「正确性证明」和「思考题答案」这两部分，那么一定已经发现了方法三中的 KMP 算法有可以优化的地方。即…</p>
+</blockquote>
+<p>阿巴阿巴…</p>
+<h1 id="技术总结"><a href="#技术总结" class="headerlink" title="技术总结"></a>技术总结</h1><p>该题复杂在 2 方面：</p>
+<ol>
+<li>同余运算的正确性证明</li>
+<li>KMP 算法实现字符串匹配（可以调 find()）</li>
+</ol>
+<p>这样的题才 Easy，而另一道每日一题「<a href="https://leetcode-cn.com/problems/shortest-palindrome/" target="_blank" rel="noopener">214.最短回文串</a>」也是调 KMP 算法，就是 Hard，迷惑。</p>
 
     </div>
 
@@ -330,7 +321,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%A7%91%E6%99%AE/" rel="tag"># 科普</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
           </div>
 
         
@@ -339,13 +330,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/03/2020-5-3-how-to-read-a-book/" rel="prev" title="《如何阅读一本书》读书笔记">
-      <i class="fa fa-chevron-left"></i> 《如何阅读一本书》读书笔记
+    <a href="/2020/08/09/%E6%80%BB%E7%BB%93-bind-cpu-mem-%E7%9A%84%E5%8A%9E%E6%B3%95/" rel="prev" title="总结 Linux 下 bind cpu/mem 的办法">
+      <i class="fa fa-chevron-left"></i> 总结 Linux 下 bind cpu/mem 的办法
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/07/hexo-next-github-blog/" rel="next" title="从 0 开始搭建 Hexo NexT主题的博客">
-      从 0 开始搭建 Hexo NexT主题的博客 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -354,9 +342,7 @@
         <h3 class="article-title" style="font-size: 20px;">相关文章</h3>
         <ul class="related-posts">
         
-            <li class="related-posts-item"><a href="/2020/06/13/7-habits-of-highly-effective-people/">《高效能人士的七个习惯》读书笔记</a></li>
-        
-            <li class="related-posts-item"><a href="/2020/05/03/2020-5-3-how-to-read-a-book/">《如何阅读一本书》读书笔记</a></li>
+            <li class="related-posts-item"><a href="/2020/05/16/leetcode-summary/">LeetCode 小结</a></li>
         
         </ul>
     
@@ -416,7 +402,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本能"><span class="nav-text">本能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#极限"><span class="nav-text">极限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容忍罪恶：为何善行之后会有恶行"><span class="nav-text">容忍罪恶：为何善行之后会有恶行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多巴胺：为什么我们误把渴望当幸福"><span class="nav-text">多巴胺：为什么我们误把渴望当幸福</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#那又如何：情绪低落使人屈服于诱惑"><span class="nav-text">那又如何：情绪低落使人屈服于诱惑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#出售未来：及时享乐的经济学"><span class="nav-text">出售未来：及时享乐的经济学</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么意志力会传染"><span class="nav-text">为什么意志力会传染</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#“我不要”的力量"><span class="nav-text">“我不要”的力量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-text">结语</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解法"><span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-1-枚举"><span class="nav-text">方法 1 枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-2-字符串匹配"><span class="nav-text">方法 2 字符串匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-3-KMP-算法"><span class="nav-text">方法 3 KMP 算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-4-优化的-KMP-算法"><span class="nav-text">方法 4 优化的 KMP 算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术总结"><span class="nav-text">技术总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
