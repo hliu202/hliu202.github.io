@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hliu202.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="又到了「新年决心效应」的时候了，先要回顾过去，才能展望未来。 关键词：编译优化，C++，GCC，Jemalloc，zsh，VS Code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020回顾——工作和学习">
+<meta property="og:url" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/index.html">
+<meta property="og:site_name" content="刘浩的blog">
+<meta property="og:description" content="又到了「新年决心效应」的时候了，先要回顾过去，才能展望未来。 关键词：编译优化，C++，GCC，Jemalloc，zsh，VS Code">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/Screenshot%20from%202021-01-07%2021-18-43.png">
+<meta property="og:image" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/IMG_0592.jpg">
+<meta property="og:image" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/IMG_0591.PNG">
+<meta property="og:image" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/Screenshot%20from%202021-01-08%2022-01-59.png">
+<meta property="og:image" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/Screenshot%20from%202021-01-08%2022-07-56.png">
+<meta property="og:image" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/v2-3090cf65cab50e1c8aa5855b386d945f_1440w.jpg">
+<meta property="article:published_time" content="2021-01-07T12:28:39.000Z">
+<meta property="article:modified_time" content="2021-01-09T13:59:09.181Z">
+<meta property="article:author" content="Hao Liu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/Screenshot%20from%202021-01-07%2021-18-43.png">
+
+<link rel="canonical" href="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>2020回顾——工作和学习 | 刘浩的blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">刘浩的blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">温故知新</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://hliu202.github.io/2021/01/07/2020%E5%9B%9E%E9%A1%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Hao Liu">
+      <meta itemprop="description" content="In Pursuit of Absolute Simplicity">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘浩的blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2020回顾——工作和学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-07 20:28:39" itemprop="dateCreated datePublished" datetime="2021-01-07T20:28:39+08:00">2021-01-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE/" itemprop="url" rel="index"><span itemprop="name">朝花夕拾</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1326836396&auto=0&height=66"></iframe>
+
+<p>又到了「新年决心效应」的时候了，先要回顾过去，才能展望未来。</p>
+<p>关键词：<code>编译优化</code>，<code>C++</code>，<code>GCC</code>，<code>Jemalloc</code>，<code>zsh</code>，<code>VS Code</code></p>
+<a id="more"></a>
+<h1 id="学习篇"><a href="#学习篇" class="headerlink" title="学习篇"></a>学习篇</h1><h2 id="读书"><a href="#读书" class="headerlink" title="读书"></a>读书</h2><p>基本专业类书籍都处于未完成状态，TODO，深陷「新年决心效应」了。</p>
+<p>科普类：《文明之光》，《自控力》，《高效能人士的 7 个习惯》，《刻意练习》，《番茄工作法》。</p>
+<blockquote>
+<p>如果要推荐一本的话，最喜欢的是《<strong>刻意练习</strong>》，对其中「动机」和「停滞状态」的讲解有很强的既视感。</p>
+</blockquote>
+<p>小说类：《活着》，《坏小孩》，《隐秘的角落》，《史记》</p>
+<h2 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h2><p>练习了一段时间的LeetCode，后面因为太忙就没有继续了。计划是完成365题，实际181，算是完成一半吧。</p>
+<p>除了每天的<code>daily</code>练习，还参加每周末的测试，主要的障碍是最后一道「困难题」总是做不出来（<a href="https://github.com/hliu202/leetcode-py/blob/master/weekly-contest/res.md" target="_blank" rel="noopener">测试结果</a>）。需要专门针对性的训练才行（刻意练习？），否则再做下去也没有太多提升。</p>
+<p><img src="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/Screenshot from 2021-01-07 21-18-43.png" alt="Screenshot from 2021-01-07 21-18-43"></p>
+<h2 id="英语单词"><a href="#英语单词" class="headerlink" title="英语单词"></a>英语单词</h2><p>查单词和背单词软件：欧路词典。</p>
+<p>遇到不会的单词就查，结果积累了2K多个，上班路上地铁上背背，结果怎么越背越多。今日复习快1K个了，也没法删除。</p>
+<p><img src="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/IMG_0592.jpg" alt="IMG_0592" style="zoom:50%;"></p>
+<p><img src="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/IMG_0591.PNG" alt="IMG_0591" style="zoom:80%;"></p>
+<h1 id="工具篇"><a href="#工具篇" class="headerlink" title="工具篇"></a>工具篇</h1><h2 id="Shell环境"><a href="#Shell环境" class="headerlink" title="Shell环境"></a>Shell环境</h2><p><img src="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/Screenshot from 2021-01-08 22-01-59.png" alt="Screenshot from 2021-01-08 22-01-59" style="zoom:80%;"></p>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><p>进一步熟悉<code>zsh shell</code>，得心应手，回不去<code>bash</code>了。</p>
+<p>目前的主题：powerlevel-10k，pure</p>
+<p>最爱的Plugin：zsh-autosuggestions，zsh-history-substring-search，fast-syntax-highlighting</p>
+<h3 id="Tilix"><a href="#Tilix" class="headerlink" title="Tilix"></a>Tilix</h3><p>之前是用terminator，Tilix更简洁一些。</p>
+<p>主题：Dracula</p>
+<h3 id="Shell-Script"><a href="#Shell-Script" class="headerlink" title="Shell Script"></a>Shell Script</h3><p>也写了很多utils脚本，使得shell界面下各种操作都很方便</p>
+<h3 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h3><p>get了几个高级功能：</p>
+<ol>
+<li><code>ctrl + v</code>编辑列</li>
+<li><code>ddp</code>, <code>yyp</code> 剪切，拷贝</li>
+<li><code>C</code> 修改(change)</li>
+</ol>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>之前只是会用基本功能，现在get到几个高级功能，好用到飞起：</p>
+<ol>
+<li><code>grl</code> (git ref log)</li>
+<li><code>grbi</code> (git rebase -i)</li>
+<li><code>gapa</code> (git add —patch)</li>
+</ol>
+<h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h2><p><img src="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/Screenshot from 2021-01-08 22-07-56.png" alt="Screenshot from 2021-01-08 22-07-56" style="zoom:80%;"></p>
+<p>主要开发环境。新Get了更多更强功能</p>
+<p>主题：Dracula</p>
+<p>Clang-Format：格式化代码</p>
+<p>C/C++：怎样debug</p>
+<p>其他功能：remote ssh，自动sync settings</p>
+<p>最爱的Plugin：Bracket Pair Colorizer 2, Windows Color，File Utils，hightlight-words</p>
+<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><p>用来写博客和文档的最佳选择，第一次用就被惊艳到了，没想到Markdown还能这么直观，一句话「所见即所得」。</p>
+<p>主题：<a href="https://github.com/hliu202/typora-purple-theme" target="_blank" rel="noopener">typora-purple-theme</a>。第一次自己定制主题，以前对<code>CSS</code>一点都不熟，想不到还很有乐趣，也学到很多。而且获得了90 star了，受到别人的认同，很有成就感。</p>
+<p>熟悉<code>CSS</code>后，还能定制自己的html文档，比如GCC官方文档太朴素，自己做了带颜色的 <a href="https://github.com/hliu202/colored-gcc-html-docs" target="_blank" rel="noopener">colored-gcc-html-docs</a>。</p>
+<h1 id="工作篇"><a href="#工作篇" class="headerlink" title="工作篇"></a>工作篇</h1><p>由于需要保密，工作内容能讲的不多，好在有一部分是已经开源的了。</p>
+<h2 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h2><p>从去年5月份就开始主要用GCC，但只是使用GCC测试和调参，并没有深入了解代码。</p>
+<p>今年5月份，终于向GCC社区提交了第一个patch：<a href="https://www.mail-archive.com/gcc-patches@gcc.gnu.org/msg236654.html" target="_blank" rel="noopener">extend cselim to check non-trapping for more references (PR tree-optimizaton/89430)</a>。解决一个优化问题，提升性能。总算是迈入GCC门槛了。以后需要以此为契机，总结一下是如何从0到1的。</p>
+<p>随后又有幸参与一个新PASS的实现，算是深入了解GCC Middle End和Back End，从1到5吧（如果高手是10的话）。</p>
+<h2 id="Jemalloc"><a href="#Jemalloc" class="headerlink" title="Jemalloc"></a>Jemalloc</h2><p>向Jemalloc提交了一个patch：<a href="https://github.com/jemalloc/jemalloc/pull/1930" target="_blank" rel="noopener">allow to specify larger slab sizes #1930</a>。更深入了解Jemalloc，以后需要以此为契机，总结Jemalloc代码。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>用于学习和工作的时间还是不够多，效率也不高，导致年初的计划都没有完成，但这也在预计中了，毕竟就没有哪一年完成了。</p>
+<p>如果说往年的计划完成度是20%的话，今年算是完成40%，还是有很大进步了。而且今年更积极主动了，不是被动学习和工作。学到的新东西也比之前多很多。加油，争取2021年的计划能圆满实现。</p>
+<p>目前应该在绝望之谷了，就差2021年及之后的持续进步了：</p>
+<p><img src="/2021/01/07/2020%E5%9B%9E%E9%A1%BE/v2-3090cf65cab50e1c8aa5855b386d945f_1440w.jpg" alt="v2-3090cf65cab50e1c8aa5855b386d945f_1440w"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/16/2020-2020-12-16-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="prev" title="正则表达式">
+      <i class="fa fa-chevron-left"></i> 正则表达式
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习篇"><span class="nav-text">学习篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#读书"><span class="nav-text">读书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leetcode"><span class="nav-text">Leetcode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#英语单词"><span class="nav-text">英语单词</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具篇"><span class="nav-text">工具篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell环境"><span class="nav-text">Shell环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh"><span class="nav-text">zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tilix"><span class="nav-text">Tilix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell-Script"><span class="nav-text">Shell Script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VIM"><span class="nav-text">VIM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VS-Code"><span class="nav-text">VS Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Typora"><span class="nav-text">Typora</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工作篇"><span class="nav-text">工作篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GCC"><span class="nav-text">GCC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jemalloc"><span class="nav-text">Jemalloc</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hao Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Hao Liu</p>
+  <div class="site-description" itemprop="description">In Pursuit of Absolute Simplicity</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hliu202" title="我的GitHub → https:&#x2F;&#x2F;github.com&#x2F;hliu202" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>我的GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://leetcode-cn.com/u/liu-hao-b/" title="我的LeetCode → https:&#x2F;&#x2F;leetcode-cn.com&#x2F;u&#x2F;liu-hao-b&#x2F;" rel="noopener" target="_blank"><i class="fab fa-leetcode fa-fw"></i>我的LeetCode</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://theme-next.js.org/docs/getting-started/" title="https:&#x2F;&#x2F;theme-next.js.org&#x2F;docs&#x2F;getting-started&#x2F;" rel="noopener" target="_blank">NexT</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.brendangregg.com/index.html" title="http:&#x2F;&#x2F;www.brendangregg.com&#x2F;index.html" rel="noopener" target="_blank">Brendan D. Gregg</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://labuladong.gitbook.io/algo/" title="https:&#x2F;&#x2F;labuladong.gitbook.io&#x2F;algo&#x2F;" rel="noopener" target="_blank">labuladong 的算法小抄</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hao Liu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'yU4196S4dbbkKdloBGwBhcn3-gzGzoHsz',
+      appKey     : 'K5PGkuWh0dAtEzXjUr6FkKYN',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
