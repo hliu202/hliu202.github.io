@@ -22,13 +22,13 @@
 
   <meta name="description" content="VSCode 是我主要使用的编辑器，主要优点有：  轻快简洁，功能强大。再也不用记住繁琐的命令，用 ctrl+shift+p 快速搜索相关操作。Multi Cursors 编辑多行。 颜值高。“Dracula Official” 和terminal 使用的 Dracula theme 简直绝配。 插件多，扩展强。“Remote - SSH” 用来远程开发的神器，甚至能支持 AArch64。  唯一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VSCode Remote Debug C&#x2F;C++ Application (gcc) 实践">
+<meta property="og:title" content="VSCode Debug C&#x2F;C++ Application (gcc) 实践">
 <meta property="og:url" content="https://hliu202.github.io/2020/04/20/2020-2020-4-20-vscode-debug/index.html">
 <meta property="og:site_name" content="刘浩的blog">
 <meta property="og:description" content="VSCode 是我主要使用的编辑器，主要优点有：  轻快简洁，功能强大。再也不用记住繁琐的命令，用 ctrl+shift+p 快速搜索相关操作。Multi Cursors 编辑多行。 颜值高。“Dracula Official” 和terminal 使用的 Dracula theme 简直绝配。 插件多，扩展强。“Remote - SSH” 用来远程开发的神器，甚至能支持 AArch64。  唯一">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-20T07:34:08.000Z">
-<meta property="article:modified_time" content="2020-09-25T13:14:58.725Z">
+<meta property="article:modified_time" content="2021-01-15T00:45:45.021Z">
 <meta property="article:author" content="Hao Liu">
 <meta property="article:tag" content="VSCode">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>VSCode Remote Debug C/C++ Application (gcc) 实践 | 刘浩的blog</title>
+  <title>VSCode Debug C/C++ Application (gcc) 实践 | 刘浩的blog</title>
   
 
 
@@ -201,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          VSCode Remote Debug C/C++ Application (gcc) 实践
+          VSCode Debug C/C++ Application (gcc) 实践
         </h1>
 
         <div class="post-meta">
@@ -219,11 +219,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tools/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
+                  <a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
                 </span>
             </span>
 
@@ -280,7 +276,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/toolchain/install_O0/bin/gcc -O2 -c fib.c -v</span><br><span class="line">...</span><br><span class="line">/home/hliu/toolchain/install_O0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.0.1/cc1 -quiet -v -imultiarch x86_64-linux-gnu -iprefix /home/hliu/toolchain/install_O0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.0.1/ fib.c -quiet -dumpbase fib.c -mtune=generic -march=x86-64 -auxbase fib -O2 -version -o /tmp/ccR1kTkZ.s</span><br></pre></td></tr></table></figure>
 <p>其中，<code>program</code> 改成 cc1 的位置，后面的都是<code>args</code>，用引号和逗号将参数分隔（<strong>这里不能用一个引号全部括起来，VSCode 不能识别</strong>）。所以相关改动如下：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"program": "/home/hliu/toolchain/install_O0/bin/../libexec/gcc/x86_64-pc-linux-gnu/10.0.1/cc1",</span><br><span class="line">"args": ["-quiet", "-v", "-imultiarch", "x86_64-linux-gnu", "-iprefix", "/home/hliu/toolchain/install_O0/bin/../lib/gcc/x86_64-pc-linux-gnu/10.0.1/", "fib.c", "-quiet", "-dumpbase", "fib.c", "-mtune=generic", "-march=x86-64", "-auxbase", "fib", "-O2", "-version", "-o", "/tmp/ccR1kTkZ.s",],</span><br></pre></td></tr></table></figure>
+<h3 id="program"><a href="#program" class="headerlink" title="program"></a>program</h3><p>要写绝对地址，只填个<code>a.out</code>是无法找到的（本以为在cwd里就可以不用写了）。</p>
 <h3 id="stopAtEntry"><a href="#stopAtEntry" class="headerlink" title="stopAtEntry"></a>stopAtEntry</h3><p>设置为<code>true</code>，表示在main函数中停下</p>
+<h3 id="externalConsole"><a href="#externalConsole" class="headerlink" title="externalConsole"></a>externalConsole</h3><p>可以改为<code>true</code>，这样会通过其他terminal输出，比如想分窗口显示debug info和debug输入。</p>
 <h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>如何在<code>launch.json</code>中设置环境变量</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"environment": [&#123;"name": "LD_LIBRARY_PATH", "value": "123"&#125;],</span><br></pre></td></tr></table></figure>
 <h3 id="cwd"><a href="#cwd" class="headerlink" title="cwd"></a>cwd</h3><p>默认为workspace根目录，为了方便，可以设置为<strong>输入输出文件所在的目录</strong></p>
@@ -333,8 +331,8 @@
       <i class="fa fa-chevron-left"></i> C++ include and iostream/stdio.h/cstdio
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/04/22/2020-2020-4-22-globalprotect-ca/" rel="next" title="Globalprotect - a problem with the security certificate">
-      Globalprotect - a problem with the security certificate <i class="fa fa-chevron-right"></i>
+    <a href="/2020/05/03/2020-2020-5-3-how-to-read-a-book/" rel="next" title="《如何阅读一本书》读书笔记">
+      《如何阅读一本书》读书笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -394,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Small-Case"><span class="nav-text">Small Case</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-Debug-GCC-in-VSCode"><span class="nav-text">How to Debug GCC in VSCode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译GCC"><span class="nav-text">编译GCC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置VSCode"><span class="nav-text">配置VSCode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Remote-SSH"><span class="nav-text">Remote-SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug-launch-json"><span class="nav-text">Debug launch.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stopAtEntry"><span class="nav-text">stopAtEntry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量"><span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cwd"><span class="nav-text">cwd</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始调试"><span class="nav-text">开始调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行模式"><span class="nav-text">命令行模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gdbinit"><span class="nav-text">.gdbinit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件断点"><span class="nav-text">条件断点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Small-Case"><span class="nav-text">Small Case</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-Debug-GCC-in-VSCode"><span class="nav-text">How to Debug GCC in VSCode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译GCC"><span class="nav-text">编译GCC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置VSCode"><span class="nav-text">配置VSCode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Remote-SSH"><span class="nav-text">Remote-SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug-launch-json"><span class="nav-text">Debug launch.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#program"><span class="nav-text">program</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stopAtEntry"><span class="nav-text">stopAtEntry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#externalConsole"><span class="nav-text">externalConsole</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量"><span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cwd"><span class="nav-text">cwd</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始调试"><span class="nav-text">开始调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行模式"><span class="nav-text">命令行模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gdbinit"><span class="nav-text">.gdbinit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件断点"><span class="nav-text">条件断点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -417,7 +415,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
